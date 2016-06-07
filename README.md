@@ -1,20 +1,37 @@
 # 360 Panoramic Viewer
 
-[panolens-github]: https://github.com/pchen66/panolens.js
+360 viewer implementation using [Panolens.js][https://github.com/pchen66/panolens.js] – [Demo](http://sbolel.github.io/pano/)
 
-* 360 viewer implementation using [Panolens.js][panolens-github]
-* [Demo](http://sinanbolel.github.io/pano/)
+## Installation
+
+    npm install --save pano
 
 ## Usage
 
-```html
-<pano>
-  <img src="https://images.contentful.com/e4m0suk6oqie/1fk11I8VuGyA8YuCoAy4Ko/f2945f467f107c86312f10c43802ebcc/Reality_Capture_IMG_03.jpg"/>
-</pano>
+Include jQuery, Three.js, Panolens, and Pano in your HTML:
 
-<script type="text/javascript">
+```html
+<head>
+  <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/three-js/three.js"></script>
+  <script type="text/javascript" src="lib/panolens.js/build/panolens.min.js"></script>
+  <script type="text/javascript" src="lib/pano/pano.js"></script>
+</head>
+```
+
+Add the URL of the image to an element in your HTML, for example:
+
+```html
+<pano data-src="https://images.contentful.com/e4m0suk6oqie/1fk11I8VuGyA8YuCoAy4Ko/f2945f467f107c86312f10c43802ebcc/Reality_Capture_IMG_03.jpg"/></pano>
+```
+
+Initialize all `<pano>` elements on the page:
+
+```html
+<script>
 $(() => {
-  const page = new PanoPage('pano', (elem) => $(elem).children().first().attr('src'));
+  const urlFn = (elem) => $(elem).attr('data-src');
+  const page = new PanoPage('pano', urlFn);
   page.view();
 });
 </script>

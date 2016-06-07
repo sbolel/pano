@@ -1,13 +1,17 @@
 {
   "name": "pano",
-  "version": "1.0.0",
-  "description": "360-panoramic image viewer using Panolens.js",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "Easily add multiple 360-panoramic viewers to a page using Panolens.js",
+  "main": "pano.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sinan Bolel <sinanbolel@gmail.com>",
-  "license": "ISC",
+  "author": {
+    "name": "Sinan Bolel",
+    "email": "sinanbolel@gmail.com",
+    "url": "https://sinanbolel.com"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:sbolel/pano.git"
@@ -16,6 +20,13 @@
     "url": "https://github.com/sbolel/pano/issues"
   },
   "homepage": "https://github.com/sbolel/pano#readme",
+  "keywords": [
+    "360",
+    "pano",
+    "panoramic",
+    "panolens",
+    "three.js"
+  ],
   "dependencies": {
     "jquery": "^2.2.4",
     "panolens.js": "git+https://github.com/pchen66/panolens.js.git",
