@@ -1,6 +1,6 @@
 # 360 Panoramic Viewer
 
-360 viewer implementation using [Panolens.js][https://github.com/pchen66/panolens.js] – [Demo](http://sbolel.github.io/pano/)
+Easily add multiple [Panolens.js](https://github.com/pchen66/panolens.js) 360-panoramic viewers to a page — [Demo](http://sbolel.github.io/pano/)
 
 ## Installation
 

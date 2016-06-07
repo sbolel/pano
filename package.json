@@ -1,6 +1,6 @@
 {
   "name": "pano",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easily add multiple 360-panoramic viewers to a page using Panolens.js",
   "main": "pano.js",
   "scripts": {
