@@ -1,0 +1,13 @@
+pano {
+  display: block;
+  height: 100%;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+pano em {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  position: relative;
+  top: -2.75rem;
+}

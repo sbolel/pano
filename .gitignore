@@ -1,5 +1,7 @@
-**/*.log
+**/npm-debug.log
 .DS_store
-.npmignore
+dist
 node_modules
-public
+public/.git
+public/.gitignore
+public/dist

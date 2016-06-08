@@ -1,0 +1,10 @@
+.DS_Store
+.git
+.gitignore
+.npmignore
+Gulpfile.js
+node_modules
+npm-debug.log
+public
+src
+test

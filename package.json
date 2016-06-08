@@ -1,8 +1,8 @@
 {
   "name": "pano",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easily add multiple 360-panoramic viewers to a page using Panolens.js",
-  "main": "pano.js",
+  "main": "dist/pano.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,17 +19,27 @@
   "bugs": {
     "url": "https://github.com/sbolel/pano/issues"
   },
-  "homepage": "https://github.com/sbolel/pano#readme",
+  "homepage": "http://sbolel.github.io/pano/",
   "keywords": [
     "360",
     "pano",
     "panoramic",
     "panolens",
-    "three.js"
+    "three.js",
+    "jquery"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-copy": "0.0.2",
+    "gulp-header": "^1.8.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
     "jquery": "^2.2.4",
-    "panolens.js": "git+https://github.com/pchen66/panolens.js.git",
-    "three-js": "^76.0.2"
+    "panolens.js": "^1.0.0",
+    "uglify-js": "github:mishoo/UglifyJS2#harmony"
   }
 }
