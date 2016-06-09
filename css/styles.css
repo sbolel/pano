@@ -62,15 +62,15 @@ a {
 
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 4.5rem 5.5rem; } }
+    padding: 3.25rem 4.25rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
-    padding: 2.5rem 3.5rem; } }
+    padding: 1.25rem 2.25rem; } }
 
 @media screen and (max-width: 42em) {
   .page-header {
-    padding: 1.5rem 0.5rem; } }
+    padding: 0.25rem 0.25rem; } }
 
 .project-name {
   margin-top: 0;
@@ -104,6 +104,9 @@ a {
 @media screen and (max-width: 42em) {
   .project-tagline {
     font-size: 0.95rem; } }
+
+.main-content {
+  text-align: center; }
 
 .main-content :first-child {
   margin-top: 0; }
