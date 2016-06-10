@@ -1,6 +1,7 @@
 **/npm-debug.log
 .DS_store
 dist
+lib
 node_modules
 public/.git
 public/.gitignore
