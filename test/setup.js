@@ -8,9 +8,9 @@ var should = global.should = chai.should()
 // var chaiAsPromised = require('chai-as-promised')
 // chai.use(chaiAsPromised)
 
-// var jsdom = require('jsdom')
-// var doc = jsdom.jsdom('<html><body></body></html>')
-// var win = doc.defaultView
-// global.document = doc
-// global.window = win
-// global.navigator = win.navigator
+var jsdom = require('jsdom')
+var doc = jsdom.jsdom('<html><body></body></html>')
+var win = doc.defaultView
+global.document = doc
+global.window = win
+global.navigator = win.navigator

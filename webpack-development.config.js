@@ -1,8 +1,5 @@
 'use strict'
 
-var baseConfig = require('./webpack-base.config')
+const createConfig = require('./bin/create-webpack-config')
 
-var config = Object.create(baseConfig)
-config.plugins = config.plugins.concat([])
-
-module.exports = config
+module.exports = createConfig({ dev: true })

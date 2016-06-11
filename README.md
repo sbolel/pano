@@ -33,61 +33,31 @@ _Easily add multiple [Panolens.js][panolens] 360-panoramic viewers to a page_
 Include and use `pano`:
 
   #### ES6
-    ```javascript
-  import pano from 'pano'
-  pano.login(auth)
-    .then(user => console.log('Successful login', user))
-    .catch(error => console.error('Error logging in', error))
-
-    ```
+  ```javascript
+  import Pano from 'pano'
+  import { Element } from 'pano'
+  // Pano.Element === Element
+  ```
 
   #### ES5
-    ```javascript
-  var pano = require('pano')
-  pano.login(auth)
-    .then(function (user) {
-      console.log('Successful login', user)
-    })
-    .catch(function (error) {
-      console.error('Error logging in', error)
-    })
-    ```
+  ```javascript
+  var Pano = require('pano')
+  Pano.Element
+  Pano.Page
+  ```
 
 ### Browser (CDN)
-  1. Add script tag to index.html:
 
-      ```html
-      ```
+1. Include [jQuery][jquery], [pano.js][pano] in your HTML:
 
-  2. Start using the library:
-
-    ```javascript
-    const username = 'scott'
-    const password = 'testpassword'
-    // Login in order to make Authenticated requests
-    new Pano.Page('pano')
-    ```
-
-    ```javascript
-    const username = 'scott'
-    // Get a specific user
-    Pano.user(username)
-      .get()
-      .then(user => console.log('user loaded:', user))
-      .catch(error => console.error('Error getting user', error))
-    ```
-
-
-Include [jQuery][jquery], [pano.js][pano] in your HTML:
-**NOTE**: Dependencies will soon be loaded by webpack and this will no longer be necessary
+**NOTE**: Dependencies will soon be loaded by Webpack and included in the bundle. That means this will no longer be necessary.
 
 ```html
 <head>
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="node_modules/pano/dist/pano.min.js"></script>
   <!-- CDN available -->
-  <script src="http://cdn.sinanbolel.com/js/pano/pano.js"></script>
-
+  <!-- <script src="http://cdn.sinanbolel.com/js/pano/pano.js"></script> -->
 </head>
 ```
 
@@ -102,9 +72,9 @@ Initialize all `<pano>` elements on the page:
 ```html
 <script>
 $(() => {
-  const panoPage = new Pano.Page('pano');
-  panoPage.init();
-});
+  const panoPage = new Pano.Page('pano')
+  panoPage.init()
+})
 </script>
 ```
 
@@ -112,6 +82,9 @@ $(() => {
 
 * Remove jQuery dependency
 
+## Special Thanks
+
+* [Prescott Prue](http://github.com/prescottprue)
 
 [npm-image]: https://img.shields.io/npm/v/pano.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/pano

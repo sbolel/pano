@@ -1,17 +1,28 @@
-<<<<<<< HEAD
 import Pano from '../../src'
+import { Element, Page } from '../../src'
 
-=======
->>>>>>> origin/master
 /* global describe, it, expect */
 describe('pano Library', () => {
   describe('constructor', () => {
-    it('has unit test scaffolding', () => {
-<<<<<<< HEAD
-      console.log('Pano', Pano)
-=======
->>>>>>> origin/master
-      expect(1).to.equal(1)
+    it('creates pano object', () => {
+      expect(Pano).to.exist
+    })
+  })
+
+  describe('Element', () => {
+    it('is exported', () => {
+      expect(Element).to.exist
+    })
+    it('exports to default', () => {
+      expect(Pano).to.respondTo('Element')
+    })
+  })
+  describe('Page', () => {
+    it('is exported', () => {
+      expect(Page).to.exist
+    })
+    it('exports to default', () => {
+      expect(Pano).to.respondTo('Page')
     })
   })
 })
