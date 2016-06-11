@@ -1,4 +1,4 @@
-// import $ from 'jQuery' // we can load this through webpack across all files as a global
+import $ from 'jQuery' // we can load this through webpack across all files as a global
 // import PANOLENS from 'panolens.js'
 // import './normalize.css' // with css-loader we can load css files as part of the code and it will bundle all of them into one css file for us
 class Element {

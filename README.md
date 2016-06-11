@@ -32,29 +32,30 @@ _Easily add multiple [Panolens.js][panolens] 360-panoramic viewers to a page_
 
 Include and use `pano`:
 
-  #### ES6
+#### ES6
   ```javascript
   import Pano from 'pano'
-  import { Element } from 'pano'
-  // Pano.Element === Element
+  import { Page } from 'pano'
+  // Pano.Page === Page
+  const panoPage = new Page('pano')
+  panoPage.init()
   ```
 
-  #### ES5
+#### ES5
   ```javascript
   var Pano = require('pano')
-  Pano.Element
-  Pano.Page
+  var panoPage = new Pano.Page('pano')
+  panoPage.init()
   ```
 
 ### Browser (CDN)
 
-1. Include [jQuery][jquery], [pano.js][pano] in your HTML:
+1. [pano.js][pano] in your HTML:
 
-**NOTE**: Dependencies will soon be loaded by Webpack and included in the bundle. That means this will no longer be necessary.
+**NOTE**: jQuery is currently a dependency that is bundled into UMD (Browser) version of `pano.js`
 
 ```html
 <head>
-  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="node_modules/pano/dist/pano.min.js"></script>
   <!-- CDN available -->
   <!-- <script src="http://cdn.sinanbolel.com/js/pano/pano.js"></script> -->
@@ -84,7 +85,7 @@ $(() => {
 
 ## Special Thanks
 
-* [Prescott Prue](http://github.com/prescottprue)
+* [Prescott Prue](http://github.com/prescottprue) - Webpack implementation
 
 [npm-image]: https://img.shields.io/npm/v/pano.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/pano
