@@ -1,6 +1,6 @@
 {
   "name": "pano",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Easily add multiple 360-panoramic viewers to a page using Panolens.js",
   "main": "dist/pano.js",
   "jsnext:main": "src/pano.js",
@@ -67,7 +67,7 @@
     "jsdom": "^9.2.1",
     "mocha": "^2.4.5",
     "rimraf": "^2.5.1",
-    "standard": "^6.0.8",
+    "standard": "^7.1.2",
     "webpack": "^1.12.14"
   }
 }
