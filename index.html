@@ -13,9 +13,9 @@
   <section class="page-header">
     <h1 class="project-name">Pano</h1>
     <h2 class="project-tagline">360-panoramic image viewer using <a href="https://github.com/sbolel/panolens.js" target="_blank">Panolens.js</a></h2>
-    <a href="https://github.com/sbolel/pano" class="btn">View on GitHub</a>
-    <a href="https://github.com/sbolel/pano/zipball/master" class="btn">Download .zip</a>
-    <a href="https://github.com/sbolel/pano/tarball/master" class="btn">Download .tar.gz</a>
+    <a id="gh-index" href="https://github.com/sbolel/pano" class="btn">View on GitHub</a>
+    <a id="gh-zip" href="https://github.com/sbolel/pano/zipball/master" class="btn">Download .zip</a>
+    <a id="gh-tar" href="https://github.com/sbolel/pano/tarball/master" class="btn">Download .tar.gz</a>
   </section>
   <section class="main-content">
     <pano width="2" height="1" src="https://sbolel.github.io/pano/img/588ca1b0bf_o.jpg" caption="Equirectangular Panorama: 'View From the Porch' by Bob Dass - https://flic.kr/p/gHXij9"/></pano>
@@ -26,6 +26,13 @@
   <script type="text/javascript">
     const panoPage = new Pano.Page('pano');
     panoPage.init();
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-73719262-4', 'auto');ga('require', 'linkid');ga('send', 'pageview');
   </script>
 </body>
 </html>
