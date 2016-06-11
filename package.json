@@ -1,33 +1,35 @@
 {
   "name": "pano",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Easily add multiple 360-panoramic viewers to a page using Panolens.js",
   "main": "dist/pano.js",
   "jsnext:main": "src/pano.js",
   "scripts": {
     "clean": "rimraf lib coverage",
-    "lint": "standard ./src/**",
+    "lint": "standard ./src/**/*.js",
     "copy": "node ./bin/copy",
     "test": "mocha -R spec --compilers js:babel-core/register ./test/setup.js ./test/**/*.spec.js",
     "test:cov": "babel-node $(npm bin)/isparta cover --report lcov ./node_modules/mocha/bin/_mocha -- ./test --recursive",
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack src/index.js dist/pano.js --config webpack-development.config.js",
     "build:umd:min": "webpack -p src/index.js dist/pano.min.js --config webpack-production.config.js",
-    "build": "npm run clean && npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "build": "npm run clean && npm run copy && npm run build:lib && npm run build:umd && npm run build:umd:min",
     "watch:umd": "npm run build:umd -- --stats --progress --colors --watch",
     "watch:lib": "npm run build:lib -- --stats --progress --colors --watch",
     "watch": "npm run watch:umd",
     "prepublish": "npm run clean && npm run test && npm run build"
   },
-  "author": {
-    "name": "Sinan Bolel",
-    "email": "sinanbolel@gmail.com",
-    "url": "https://sinanbolel.com"
-  },
+  "authors": [
+    {
+      "name": "Sinan Bolel",
+      "email": "sinanbolel@gmail.com",
+      "url": "https://sinanbolel.com"
+    }
+  ],
   "contributors": [
     {
       "name": "Prescott Prue",
-      "email": "<sprue.dev@gmail.com>"
+      "email": "sprue.dev@gmail.com"
     }
   ],
   "license": "MIT",
@@ -41,14 +43,17 @@
   "homepage": "http://sbolel.github.io/pano/",
   "keywords": [
     "360",
+    "cardboard",
+    "jquery",
     "pano",
-    "panoramic",
     "panolens",
+    "panorama",
+    "panoramic",
+    "three",
     "three.js",
-    "jquery"
+    "vr"
   ],
   "dependencies": {
-    "jquery": "^2.2.4",
     "panolens.js": "^1.0.0"
   },
   "devDependencies": {

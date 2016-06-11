@@ -19,8 +19,8 @@ _Easily add multiple [Panolens.js][panolens] 360-panoramic viewers to a page_
 #### > View the [demo](http://sbolel.github.io/pano/)
 
 * Implements `PanoElement` and `PanoPage`
-* Requires [jQuery][jquery], [Three.js][three], [Panolens.js][panolens]
-* Built from the original [Panolens.js](https://github.com/sbolel/panolens.js) by [pchen66](https://github.io/pchen66)
+* Requires [Panolens.js][panolens]
+* Based on [Panolens.js](https://github.com/sbolel/panolens.js) by [pchen66](https://github.io/pchen66)
 
 ## Installation
 
@@ -50,42 +50,35 @@ Include and use `pano`:
 
 ### Browser (CDN)
 
-1. [pano.js][pano] in your HTML:
-
-**NOTE**: jQuery is currently a dependency that is bundled into UMD (Browser) version of `pano.js`
+Add [panolens.js][panolens] and [pano.js][pano] scripts in your HTML:
 
 ```html
 <head>
+  <script type="text/javascript" src="node_modules/panolens.js/panolens.min.js"></script>
   <script type="text/javascript" src="node_modules/pano/dist/pano.min.js"></script>
   <!-- CDN available -->
   <!-- <script src="http://cdn.sinanbolel.com/js/pano/pano.js"></script> -->
 </head>
 ```
 
-Add the `src`, `height`, `width` of the image and an optional `caption` as attributes to an element in your HTML:
+Add the required image `width`, `height`, `src`, and optional `caption` attributes to a `<pano>` element in your HTML:
 
 ```html
-<pano width="1024" height="397" src="https://images.contentful.com/e4m0suk6oqie/1fk11I8VuGyA8YuCoAy4Ko/f2945f467f107c86312f10c43802ebcc/Reality_Capture_IMG_03.jpg" caption="Equirectangular Panorama"/></pano>
+<pano width="1024" height="512" src="https://sbolel.github.io/pano/img/588ca1b0bf_o.jpg" caption="Equirectangular Panorama"/></pano>
 ```
 
 Initialize all `<pano>` elements on the page:
 
 ```html
-<script>
-$(() => {
-  const panoPage = new Pano.Page('pano')
-  panoPage.init()
-})
+<script type="text/javascript">
+  const panoPage = new Pano.Page('pano');
+  panoPage.init();
 </script>
 ```
 
-## Future
-
-* Remove jQuery dependency
-
 ## Special Thanks
 
-* [Prescott Prue](http://github.com/prescottprue) - Webpack implementation
+* [Prescott Prue](http://github.com/prescottprue) - Webpack implementation, tests, coverage
 
 [npm-image]: https://img.shields.io/npm/v/pano.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/pano

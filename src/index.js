@@ -1,6 +1,8 @@
-import $ from 'jQuery' // we can load this through webpack across all files as a global
 // import PANOLENS from 'panolens.js'
-// import './normalize.css' // with css-loader we can load css files as part of the code and it will bundle all of them into one css file for us
+
+// with css-loader we can load css files as part of the code and it will bundle all of them into one css file for us
+// import './normalize.css'
+
 class Element {
   static getConfig (container) {
     if (!container || typeof container === 'undefined') {
@@ -19,51 +21,58 @@ class Element {
     if (!container || typeof container === undefined) {
       throw new Error('No jQuery pattern for panorama container provided.')
     }
-    // container jquery element
-    this.container = $(container)
-    // calculate and set the height of container from image size
-    const width = Number(this.container.attr('width')) * 1.0
-    const height = Number(this.container.attr('height')) * 1.0
+    this.container = container;
+    // calculate the aspect ratio for the pano container
+    const width = Number(this.container.attributes.width.nodeValue) * 1.0
+    const height = Number(this.container.attributes.height.nodeValue) * 1.0
     const aspect = height / width
-    const targetHeight = aspect * this.container.parent().width()
-    this.container.css('height', `${targetHeight}px`)
+    const targetHeight = aspect * this.container.parentElement.offsetWidth
+    // set the height of container to calculated target height
+    this.container.style.setProperty('height', `${targetHeight}px`)
     // set the config
     this.config = Element.getConfig(container)
-    // get caption
-    this.caption = this.container.attr('caption')
     // set the img src from container attributes
-    this.src = this.container.attr('src')
+    this.src = this.container.attributes.src.nodeValue
     // initialize the panorama and camera
     this.pano = new PANOLENS.ImagePanorama(this.src)
     this.viewer = new PANOLENS.Viewer(this.config)
   }
   init () {
     this.viewer.add(this.pano)
-    if (this.caption) this.container.append(`<em>${this.caption}</em>`) // add the caption from element attributes
+    this.appendCaption()
+  }
+  appendCaption () {
+    this.caption = this.container.attributes.caption.nodeValue
+    if (this.caption && this.caption !== '') {
+      const captionDiv = document.createElement('em')
+      captionDiv.appendChild(document.createTextNode(this.caption))
+      this.container.appendChild(captionDiv)
+    }
   }
 }
 
 class Page {
-  constructor(containers) {
+  constructor (containers) {
     if (!containers || typeof containers === 'undefined') {
       throw new Error('No jQuery pattern for panorama container provided.')
     }
-    // const self = this
     this.panos = []
-    $(containers).each((index, elem) => {
-      // Fat arror passes context, and self was a const
-      // self.panos.push(new Element(elem))
-      this.panos.push(new Element(elem))
-    })
+    this.elements = document.getElementsByTagName("pano")
+    for(let i = 0; i < this.elements.length; i++) {
+      this.panos.push(new Element(this.elements[i]))
+    }
   }
   init () {
-    this.panos.forEach((panoInstance) => panoInstance.init())
+    for(let i = 0; i < this.panos.length; i++) {
+      this.panos[i].init()
+    }
   }
 }
 
 const Pano = {
   Element,
-  Page,
+  Page
 }
+
 export { Element, Page }
 export default Pano

@@ -1,9 +1,10 @@
 **/npm-debug.log
-.DS_store
+**/.DS_store
+coverage
 dist
 lib
 node_modules
 public/.git
 public/.gitignore
 public/dist
-coverage
+public/lib
