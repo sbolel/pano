@@ -4,9 +4,36 @@
   <meta charset="UTF-8">
   <title>Pano by sbolel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="./lib/panolens.min.js"></script>
-  <script type="text/javascript" src="./dist/pano.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+  <meta name="author" content="Sinan Bolel <hi@sinanbolel.com>">
+  <meta name="description" content="Open-Source 360-panoramic Image Viewer">
+  <meta name="keywords" content="360, 3d, bolel, cardboard, html5, javascript, jquery, js, library, open-source, pano, panolens, panorama, panoramic, sbolel, sinan bolel, sinan, sinanbolel, three.js, viewer, vr">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+  <meta property="og:title" content="Sinan Bolel">
+  <meta property="og:description" content="Open-Source 360-panoramic Image Viewer">
+  <meta property="og:image" content="https://sbolel.github.io/pano/img/pano-outline@100x.png">
+  <meta property="og:url" content="https://sbolel.github.io/pano/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pano || Sinan Bolel">
+  <meta itemprop="name" content="Pano || Sinan Bolel">
+  <meta itemprop="description" content="Open-Source 360-panoramic Image Viewer">
+  <meta name="msapplication-TileColor" content="#3f51b5">
+  <meta name="msapplication-TileImage" content="assets/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="assets/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="assets/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="assets/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="assets/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="assets/favicons/manifest.json">
   <link rel="stylesheet" type="text/css" href="./index.min.css" media="screen">
 </head>
 <body>
@@ -21,13 +48,13 @@
     <pano width="2" height="1" src="https://sbolel.github.io/pano/img/588ca1b0bf_o.jpg" caption="Equirectangular Panorama: 'View From the Porch' by Bob Dass - https://flic.kr/p/gHXij9"/></pano>
     <footer class="site-footer">
       <span class="site-footer-owner"><a href="https://github.com/sbolel/pano">Pano</a> is maintained by <a href="https://github.com/sbolel">Sinan Bolel</a> &amp; <a href="https://github.com/prescottprue">Prescott Prue</a>.</span>
+      <span class="site-footer-owner">Based on <a href="https://github.com/pchen66/panolens.js">Panolens.js</a> by <a src="https://github.com/pchen66">Pchen66</a>.</span>
     </footer>
   </section>
+  <script type="text/javascript" src="./lib/panolens.min.js"></script>
+  <script type="text/javascript" src="./dist/pano.min.js"></script>
   <script type="text/javascript">
-    const panoPage = new Pano.Page('pano');
-    panoPage.init();
-  </script>
-  <script>
+    var panoPage = new Pano.Page('pano');panoPage.init();
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
