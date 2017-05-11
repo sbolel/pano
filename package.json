@@ -54,7 +54,7 @@
     "vr"
   ],
   "dependencies": {
-    "panolens.js": "1.0.1"
+    "panolens.js": "1.0.1-beta"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
