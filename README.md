@@ -9,76 +9,70 @@
 [![License][license-image]][license-url]
 [![Code Style][code-style-image]][code-style-url]
 
-[jquery]: https://github.com/jquery/jquery
-[three]: https://github.com/mrdoob/three.js
-[panolens]: https://github.com/sbolel/panolens.js
-[pano]: https://github.com/sbolel/pano
+_Add multiple [Panolens.js](https://github.com/sbolel/panolens.js) 360-panoramic viewers to a page with ease._
 
-_Easily add multiple [Panolens.js][panolens] 360-panoramic viewers to a page_
-
-#### > View the [demo](http://sbolel.github.io/pano/)
-
+* Requires [Panolens.js](https://github.com/sbolel/panolens.js), which is based on [Panolens.js](https://github.com/sbolel/panolens.js) by [pchen66](https://github.com/pchen66)
 * Implements `PanoElement` and `PanoPage`
-* Requires [Panolens.js][panolens]
-* Based on [Panolens.js](https://github.com/sbolel/panolens.js) by [pchen66](https://github.io/pchen66)
 
 ## Installation
 
-    npm install --save pano
+You can either install via npm and include the scripts in your build process, or use a CDN.
+
+* **Using npm packages**, first install dependencies
+
+      npm install --save panolens.js pano
+
+  Then, include the scripts in your HTML: 
+
+    ```html
+    <script type="text/javascript" src="node_modules/panolens.js/panolens.min.js"></script>
+    <script type="text/javascript" src="node_modules/pano/dist/pano.min.js"></script>
+    ```
+
+* **Using the CDN**, include scripts via CDN by adding them to your `index.html`:
+
+  ```html
+  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/panolens-1.0.1-beta.min.js"></script>
+  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/pano-2.0.0.min.js"></script>
+  ```
 
 ## Usage
 
-### NPM
+1. Instantiate `Pano.Page` object
 
-Include and use `pano`:
+    ```js
+    /** ES6 */
+    import { Page } from 'pano'
+    const panoPage = new Page('pano')
+    panoPage.init()
 
-#### ES6
-  ```javascript
-  import Pano from 'pano'
-  import { Page } from 'pano'
-  // Pano.Page === Page
-  const panoPage = new Page('pano')
-  panoPage.init()
-  ```
+    /** ES5 */
+    var Pano = require('pano')
+    var panoPage = new Pano.Page('pano')
+    panoPage.init()
+    ```
 
-#### ES5
-  ```javascript
-  var Pano = require('pano')
-  var panoPage = new Pano.Page('pano')
-  panoPage.init()
-  ```
+2. Add `<pano>` elemement HTML
 
-### Browser (CDN)
+  * Include the required `width`, `height`, `src`, `caption` (optional) attributes for the `<pano>` element(s) in your view:
 
-Add [panolens.js][panolens] and [pano.js][pano] scripts in your HTML:
+    ```html
+    <pano width="1024" height="512" src="https://sbolel.github.io/pano/img/588ca1b0bf_o.jpg" caption="Equirectangular Panorama"/></pano>
+    ```
 
-```html
-<head>
-  <script type="text/javascript" src="node_modules/panolens.js/panolens.min.js"></script>
-  <script type="text/javascript" src="node_modules/pano/dist/pano.min.js"></script>
-  <!-- CDN available -->
-  <!-- <script src="http://cdn.sinanbolel.com/js/pano/pano.js"></script> -->
-</head>
-```
+3. Initialize all `<pano>` elements on the page
 
-Add the required image `width`, `height`, `src`, and optional `caption` attributes to a `<pano>` element in your HTML:
+    ```js
+    var panoPage = new Pano.Page('pano')
+    panoPage.init()
+    ```
 
-```html
-<pano width="1024" height="512" src="https://sbolel.github.io/pano/img/588ca1b0bf_o.jpg" caption="Equirectangular Panorama"/></pano>
-```
+## Credits
 
-Initialize all `<pano>` elements on the page:
+* [prescottprue](http://github.com/prescottprue) - Webpack implementation, tests, coverage
+* [pchen66](http://github.com/pchen66) - Original Panolens.js implementation
 
-```html
-<script type="text/javascript">
-  const panoPage = new Pano.Page('pano');
-  panoPage.init();
-</script>
-```
-
-## Special Thanks
-
-* [Prescott Prue](http://github.com/prescottprue) - Webpack implementation, tests, coverage
+<!-- links -->
 
 [npm-image]: https://img.shields.io/npm/v/pano.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/pano
