@@ -1,13 +1,11 @@
 # Pano.js
 
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][npm-downloads-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Code Climate][climate-image]][climate-url]
-[![Code Coverage][coverage-image]][coverage-url]
+[![Build Status][build-image]][build-url]
 [![License][license-image]][license-url]
+[![NPM version][npm-image]][npm-url]
+[![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Style][code-style-image]][code-style-url]
+[![NPM downloads][npm-downloads-image]][npm-url]
 
 _Add multiple [Panolens.js](https://github.com/sbolel/panolens.js) 360-panoramic viewers to a page with ease._
 
@@ -77,8 +75,8 @@ You can either install via npm and include the scripts in your build process, o
 [npm-image]: https://img.shields.io/npm/v/pano.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/pano
 [npm-downloads-image]: https://img.shields.io/npm/dm/pano.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/sbolel/pano/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/sbolel/pano
+[build-image]: https://circleci.com/gh/sbolel/pano.svg?style=shield
+[build-url]: https://circleci.com/gh/sbolel/pano
 [daviddm-image]: https://img.shields.io/david/sbolel/pano.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/sbolel/pano
 [climate-image]: https://img.shields.io/codeclimate/github/sbolel/pano.svg?style=flat-square

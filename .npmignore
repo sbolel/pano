@@ -1,10 +1,8 @@
-.DS_Store
+**/.DS_Store
 .git
 .gitignore
 .npmignore
-Gulpfile.js
+circle.yml
 node_modules
 npm-debug.log
 public
-src
-test

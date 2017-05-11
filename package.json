@@ -13,11 +13,11 @@
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack src/index.js dist/pano.js --config webpack-development.config.js",
     "build:umd:min": "webpack src/index.js dist/pano.min.js --config webpack-production.config.js",
-    "build": "npm run clean && npm run copy && npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "build": "run-s clean copy build:lib build:umd build:umd:min",
     "watch:umd": "npm run build:umd -- --stats --progress --colors --watch",
     "watch:lib": "npm run build:lib -- --stats --progress --colors --watch",
     "watch": "npm run watch:umd",
-    "prepublish": "npm run clean && npm run test && npm run build"
+    "prepublish": "run-s clean test build"
   },
   "authors": [
     {
@@ -66,6 +66,7 @@
     "isparta": "4.0.0",
     "jsdom": "10.1.0",
     "mocha": "3.3.0",
+    "npm-run-all": "^4.0.2",
     "rimraf": "2.6.1",
     "standard": "10.0.2",
     "webpack": "2.5.1"
