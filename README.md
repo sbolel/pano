@@ -5,7 +5,6 @@
 [![NPM version][npm-image]][npm-url]
 [![Code Style][code-style-image]][code-style-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
-<!-- [![Dependency Status][daviddm-image]][daviddm-url] -->
 
 _Add multiple [Panolens.js](https://github.com/sbolel/panolens.js) 360-panoramic viewers to a page with ease._
 
@@ -22,16 +21,16 @@ You can either install via npm and include the scripts in your build process, o
 
     ```bash
     # with yarn
-    yarn add panolens.js pano
+    yarn add pano
 
     # with npm
-    npm install --save panolens.js pano
+    npm install --save pano
     ```
 
   Import Pano
 
     ```js
-    import Pano from 'pano'
+    import * as Pano from 'pano'
     ```
 
 * **Using the CDN**
@@ -39,7 +38,8 @@ You can either install via npm and include the scripts in your build process, o
   Include scripts via CDN by adding them to your `index.html`:
 
   ```html
-  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/pano-3.0.0.min.js"></script>
+  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/pano-vendor-v3.0.0.min.js"></script>
+  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/pano-v3.0.0.min.js"></script>
   ```
 
 ## Usage
