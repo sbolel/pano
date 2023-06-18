@@ -1,59 +1,75 @@
+/**
+ * Create Webpack Configuration
+ * @param {Object} options
+ * @param {boolean} options.dev
+ * @param {string} options.target
+ * @returns {Object}
+ */
 const path = require('path')
 const webpack = require('webpack')
 const pkg = require('../package.json')
+const TerserPlugin = require('terser-webpack-plugin')
 
 // paths
 const buildPath = 'dist'
 const publicPath = 'assets'
 
 // create configuration
-module.exports = function (options) {
-  if (!options) { options = {} }
-
+const createWebpackConfig = (options = {}) => {
   const plugins = [
     new webpack.BannerPlugin({
       banner: `pano.js v${pkg.version} | (c) Sinan Bolel & Prescott Prue`,
-      entryOnly: true, raw: false
+      entryOnly: true,
+      raw: false,
     }),
-    new webpack.NoEmitOnErrorsPlugin()
   ]
 
-  if (!options.dev) {
-    plugins.push(
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        },
-        compressor: {
-          screw_ie8: true,
-          warnings: false
-        }
-      })
-    )
-  }
-
   return {
-    bail: !options.dev,
-    devtool: options.dev ? 'eval-source-map' : 'sourcemap',
+    mode: options.dev ? 'development' : 'production',
+    devtool: options.dev ? 'eval-source-map' : 'source-map',
     entry: path.join(__dirname, '..', 'src/index'),
     module: {
-      loaders: [{
+      rules: [
+        {
           exclude: /node_modules/,
-          loaders: ['babel-loader'],
-          test: /\.js$/
-      }]
+          use: ['babel-loader'],
+          test: /\.js$/,
+        },
+      ],
     },
     output: {
-      library: 'Pano',
-      libraryTarget: 'umd',
+      library: {
+        name: 'Pano',
+        type: 'umd',
+      },
       path: path.resolve(__dirname, '..', buildPath),
-      publicPath: '/dist/'
+      publicPath: '/dist/',
+      filename: options.dev ? 'pano.js' : 'pano.min.js',
     },
     plugins: plugins,
     resolve: {
       alias: { assets: path.resolve(__dirname, '..', 'assets') },
-      extensions: ['.js']
+      extensions: ['.js'],
     },
-    target: options.target
+    target: options.target,
+    optimization: {
+      minimize: !options.dev,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              warnings: false,
+              drop_console: true,
+              drop_debugger: true,
+            },
+            output: {
+              comments: false,
+            },
+          },
+        }),
+      ],
+    },
   }
 }
+
+module.exports = createWebpackConfig

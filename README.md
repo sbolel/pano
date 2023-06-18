@@ -3,9 +3,9 @@
 [![Build Status][build-image]][build-url]
 [![License][license-image]][license-url]
 [![NPM version][npm-image]][npm-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Style][code-style-image]][code-style-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
+<!-- [![Dependency Status][daviddm-image]][daviddm-url] -->
 
 _Add multiple [Panolens.js](https://github.com/sbolel/panolens.js) 360-panoramic viewers to a page with ease._
 
@@ -16,18 +16,21 @@ _Add multiple [Panolens.js](https://github.com/sbolel/panolens.js) 360-panoramic
 
 You can either install via npm and include the scripts in your build process, or use a CDN.
 
-* **Using npm packages**, first install dependencies
+* **Using npm packages**
 
-      npm install --save panolens.js pano
+  Install dependencies
 
-  Then, include the scripts in your HTML: 
+    ```bash
+    # with yarn
+    yarn add panolens.js pano
 
-    ```html
-    <script type="text/javascript" src="node_modules/panolens.js/panolens.min.js"></script>
-    <script type="text/javascript" src="node_modules/pano/dist/pano.min.js"></script>
+    # with npm
+    npm install --save panolens.js pano
     ```
 
-* **Using the CDN**, include scripts via CDN by adding them to your `index.html`:
+* **Using the CDN**
+
+  Include scripts via CDN by adding them to your `index.html`:
 
   ```html
   <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/panolens-1.0.1-beta.min.js"></script>
@@ -52,13 +55,13 @@ You can either install via npm and include the scripts in your build process, o
 
 2. Add `<pano>` elemement HTML
 
-  * Include the required `width`, `height`, `src`, `caption` (optional) attributes for the `<pano>` element(s) in your view:
+    Include the required `width`, `height`, `src`, `caption` (optional) attributes for the `<pano>` element(s) in your view:
 
     ```html
     <pano width="1024" height="512" src="https://sbolel.github.io/pano/img/588ca1b0bf_o.jpg" caption="Equirectangular Panorama"/></pano>
     ```
 
-3. Initialize all `<pano>` elements on the page
+1. Initialize all `<pano>` elements on the page
 
     ```js
     var panoPage = new Pano.Page('pano')
