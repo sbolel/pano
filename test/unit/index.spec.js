@@ -1,5 +1,4 @@
-import Pano from '../../src'
-import { Element, Page } from '../../src'
+import Pano, { Element, Page } from '../../src/index.js'
 
 /* global describe, it, expect */
 describe('pano Library', () => {

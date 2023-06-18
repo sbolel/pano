@@ -8,3 +8,51 @@ public/.git
 public/.gitignore
 public/dist
 public/lib
+
+# logs
+**/*.log
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# node
+**/node_modules/
+dist
+dist-ssr
+*.local
+
+# editors
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# temporary
+tmp/
+**/temp/
+**/.cache/
+**/.temp/
+
+# macos
+**/.DS_Store
+
+# coverage and stats
+**/coverage/**
+.coverage
+stats.*
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

@@ -2,6 +2,7 @@
 .git
 .gitignore
 .npmignore
+.yarn
 circle.yml
 node_modules
 npm-debug.log
