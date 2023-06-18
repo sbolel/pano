@@ -5492,19 +5492,22 @@ __metadata:
     jsdom: ^22.1.0
     mocha: ^10.2.0
     npm-run-all: ^4.0.2
-    panolens.js: 1.0.1-beta
+    panolens: ^0.12.1
     rimraf: ^5.0.1
     standard: ^17.1.0
     terser-webpack-plugin: ^5.3.9
+    three: ^0.105.2
     webpack: ^5.87.0
     webpack-cli: ^5.1.4
   languageName: unknown
   linkType: soft
 
-"panolens.js@npm:1.0.1-beta":
-  version: 1.0.1-beta
-  resolution: "panolens.js@npm:1.0.1-beta"
-  checksum: aec460dfe0c4c105ef4c62902218035d36ddee4742e43e09ad59999144de0007115244dcf57bc3d366a4f13e2a717d9003a833a0bcdedc72b9675daf8555c6b6
+"panolens@npm:^0.12.1":
+  version: 0.12.1
+  resolution: "panolens@npm:0.12.1"
+  dependencies:
+    three: ^0.105.2
+  checksum: 5f30f34ad51d9f584a473009e58b70e7242dd49a8a048c4d328f56764fb92ce43db36783ae1032e9b58083213f4d4a4b68d72d4e594ef9f514037a05d2dc6173
   languageName: node
   linkType: hard
 
@@ -6647,6 +6650,13 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: b6937a38c80c7f84d9c11dd75e49d5c44f71d95e810a3250bd1f1797fc7117c57698204adf676b71497acc205d769d65c16ae8fa10afad832ae1322630aef10a
+  languageName: node
+  linkType: hard
+
+"three@npm:^0.105.2":
+  version: 0.105.2
+  resolution: "three@npm:0.105.2"
+  checksum: 06fda6ef616326d95922153ca129bb3dd1d5892cc6faa4aa55b42d892dcb9aefd552ec4f220e0329e871805ea0cb2457cf26951ec4820035dd655841266030b0
   languageName: node
   linkType: hard
 

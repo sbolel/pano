@@ -5,7 +5,15 @@
  * @exports Pano
  * @requires panolens.js
  */
-import PANOLENS from 'panolens.js'
+import * as THREE from 'three'
+
+// expose THREE to window
+if (typeof window !== 'undefined' && typeof window.THREE === 'undefined') {
+  window.THREE = THREE
+}
+
+import { ImagePanorama, Viewer } from 'panolens'
+
 
 /**
  * @class Element
@@ -51,8 +59,8 @@ export class Element {
     // set the img src from container attributes
     this.src = this.container.attributes.src.nodeValue
     // initialize the panorama and camera
-    this.pano = new PANOLENS.ImagePanorama(this.src)
-    this.viewer = new PANOLENS.Viewer(this.config)
+    this.pano = new ImagePanorama(this.src)
+    this.viewer = new Viewer(this.config)
   }
 
   init () {
