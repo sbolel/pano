@@ -9,7 +9,7 @@
     el.parentNode.appendChild(ss, el);
   };
 
-  load('pano-2.0.0.js', true, function() {
+  load('dist/pano.min.js', true, function() {
     pano = new ww.Pano.Page('pano');
     pano.init();
   });

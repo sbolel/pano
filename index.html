@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://sbolel.github.io/pano">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pano | sbolel">
-<meta property="og:see_also" content="https://github.com/sbolel">
 <meta property="og:see_also" content="https://sinanbolel.com">
+<meta property="og:see_also" content="https://github.com/sbolel">
 <link rel="stylesheet" type="text/css" href="pano-2.0.0.css" media="screen">
 <base href="./">
 </head>
@@ -35,12 +35,14 @@
       <span class="site-footer-owner">Based on <a href="https://github.com/pchen66/panolens.js">Panolens.js</a> by pchen66.</span>
     </footer>
   </section>
-  <script>(function(ww, dd) {
-  function dl(url, def, cb){var el=dd.getElementsByTagName('body')[0],ss=dd.createElement('script');
+  <script type="text/javascript" src="dist/pano-vendor-v3.0.0.min.js"></script>
+  <script type="text/javascript" src="dist/pano-v3.0.0.min.js"></script>
+  <script defer>(function(ww, dd) {
+    pano=new ww.Pano.Page('pano');pano.init();
+    function dl(url, def, cb){var el=dd.getElementsByTagName('body')[0],ss=dd.createElement('script');
     ss.src = url; ss.type='text/javascript';ss.async=true;ss.defer=def?def:true;
     if(cb){ss.onload=cb;}el.parentNode.appendChild(ss, el);};
-  dl('./pano-2.0.0.js',true,function(){pano=new ww.Pano.Page('pano');pano.init();});
-  dl('//www.google-analytics.com/analytics.js',false,function(){
+    dl('//www.google-analytics.com/analytics.js',false,function(){
     ww.ga=ww.ga||function(){(ww.ga.q=ww.ga.q||[]).push(arguments);};ww.ga.l=+new Date;
     ww.ga('create','UA-73719262-4','auto');ww.ga('send','pageview');
     ww._tl=function(url){ww.ga('send','event','outbound','click',url,{'transport':'beacon',
