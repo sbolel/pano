@@ -1,0 +1,16 @@
+version: 2
+
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'friday'
+      time: '08:00'
+      timezone: 'America/New_York'
+    labels:
+      - 'dependencies'
+    rebase-strategy: 'auto'
+    reviewers:
+      - 'sbolel'
+    versioning-strategy: increase
