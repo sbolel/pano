@@ -73,6 +73,9 @@ const createWebpackConfig = (options = {}) => {
         entryOnly: true,
         raw: false,
       }),
+      new webpack.EnvironmentPlugin({
+        npm_lifecycle_event: '', // override to avoid error
+      })
     ],
     resolve: {
       alias: {

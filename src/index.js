@@ -12,8 +12,7 @@ if (typeof window !== 'undefined' && typeof window.THREE === 'undefined') {
   window.THREE = THREE
 }
 
-import { ImagePanorama, Viewer } from 'panolens'
-
+import * as PANOLENS from 'panolens'
 
 /**
  * @class Element
@@ -59,8 +58,8 @@ export class Element {
     // set the img src from container attributes
     this.src = this.container.attributes.src.nodeValue
     // initialize the panorama and camera
-    this.pano = new ImagePanorama(this.src)
-    this.viewer = new Viewer(this.config)
+    this.pano = new PANOLENS.ImagePanorama(this.src)
+    this.viewer = new PANOLENS.Viewer(this.config)
   }
 
   init () {
