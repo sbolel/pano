@@ -1,4 +1,5 @@
-const chai = global.chai = require('chai')
+import chai from 'chai'
+global.chai = chai
 const expect = global.expect = chai.expect
 const should = global.should = chai.should()
 
@@ -8,10 +9,9 @@ const should = global.should = chai.should()
 // const chaiAsPromised = require('chai-as-promised')
 // chai.use(chaiAsPromised)
 
-const jsdom = require("jsdom")
-const { JSDOM } = jsdom
-const dom = new JSDOM(`<html><body></body></html>`)
+import { JSDOM } from 'jsdom'
+const dom = new JSDOM('<html><body></body></html>')
 
-const { document } = dom.window
+global.window = dom.window
 global.document = dom.window.document
 // global.navigator = dom.window.navigator
