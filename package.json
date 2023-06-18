@@ -68,7 +68,7 @@
     "npm-run-all": "^4.0.2",
     "rimraf": "2.6.1",
     "standard": "10.0.2",
-    "webpack": "2.5.1"
+    "webpack": "2.7.0"
   },
   "peerDependencies": {}
 }
