@@ -1,6 +1,6 @@
 {
   "name": "pano",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Easily add multiple 360-panoramic viewers to a page using Panolens.js",
   "main": "dist/pano.js",
   "jsnext:main": "src/pano.js",
