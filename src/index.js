@@ -7,12 +7,12 @@
  */
 import * as THREE from 'three'
 
+import * as PANOLENS from 'panolens'
+
 // expose THREE to window
 if (typeof window !== 'undefined' && typeof window.THREE === 'undefined') {
   window.THREE = THREE
 }
-
-import * as PANOLENS from 'panolens'
 
 /**
  * @class Element
