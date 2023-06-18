@@ -19,6 +19,12 @@
     "watch": "npm run watch:umd",
     "prepublish": "run-s clean test build"
   },
+  "packageManager": "yarn@3.6.0",
+  "engines": {
+    "node": "19",
+    "npm": "9.7.1",
+    "yarn": "3.6.0"
+  },
   "authors": [
     {
       "name": "Sinan Bolel",
@@ -70,6 +76,5 @@
     "rimraf": "2.6.1",
     "standard": "10.0.2",
     "webpack": "2.5.1"
-  },
-  "peerDependencies": {}
+  }
 }
