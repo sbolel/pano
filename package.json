@@ -67,7 +67,7 @@
     "mocha": "3.3.0",
     "npm-run-all": "^4.0.2",
     "rimraf": "2.6.1",
-    "standard": "10.0.2",
+    "standard": "17.1.0",
     "webpack": "2.5.1"
   },
   "peerDependencies": {}
