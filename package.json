@@ -28,14 +28,13 @@
   "authors": [
     {
       "name": "Sinan Bolel",
-      "email": "sinanbolel@gmail.com",
       "url": "https://sinanbolel.com"
     }
   ],
   "contributors": [
     {
       "name": "Prescott Prue",
-      "email": "sprue.dev@gmail.com"
+      "url": "https://github.com/prescottprue"
     }
   ],
   "license": "MIT",
