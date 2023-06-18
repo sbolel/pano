@@ -7,27 +7,48 @@
  */
 const path = require('path')
 const webpack = require('webpack')
-const pkg = require('../package.json')
 const TerserPlugin = require('terser-webpack-plugin')
+const pkg = require('../package.json')
 
 // paths
 const buildPath = 'dist'
 const publicPath = 'assets'
 
-// create configuration
+/**
+ * Create Webpack Configuration
+ * @param {Object} options - options object
+ * @param {boolean} options.dev - development mode
+ * @param {string} options.target - target
+ * @returns {Object}
+ * @example
+ *  const webpack = require('webpack')
+ *  const createWebpackConfig = require('./create-webpack-config')
+ *  const webpackConfig = createWebpackConfig({ dev: true, target: 'web' })
+ *  webpack(webpackConfig, (err, stats) => {
+ *    if (err || stats.hasErrors()) {
+ *      // Handle errors here
+ *    }
+ *    // Done processing
+ *  })
+ */
 const createWebpackConfig = (options = {}) => {
-  const plugins = [
-    new webpack.BannerPlugin({
-      banner: `pano.js v${pkg.version} | (c) Sinan Bolel & Prescott Prue`,
-      entryOnly: true,
-      raw: false,
-    }),
-  ]
+  /**
+   * Get chunk name with the correct extension
+   * @param {Object} chunkData - chunk data
+   * @param {Object} chunkData.chunk - chunk object
+   * @param {string} chunkData.chunk.name - chunk name
+   * @returns {string} chunk name
+   */
+  const getChunkName = ({ chunk: { name = '' } } = {}) => {
+    if (!name) throw new Error('Chunk name is required')
+    const ext = options.dev ? '.js' : '.min.js'
+    return name === 'main' ? `pano${ext}` : `pano-[name]${ext}`
+  }
 
   return {
-    mode: options.dev ? 'development' : 'production',
+    target: options.target,
     devtool: options.dev ? 'eval-source-map' : 'source-map',
-    entry: path.join(__dirname, '..', 'src/index'),
+    mode: options.dev ? 'development' : 'production',
     module: {
       rules: [
         {
@@ -38,20 +59,27 @@ const createWebpackConfig = (options = {}) => {
       ],
     },
     output: {
+      filename: getChunkName,
       library: {
         name: 'Pano',
         type: 'umd',
       },
       path: path.resolve(__dirname, '..', buildPath),
-      publicPath: '/dist/',
-      filename: options.dev ? 'pano.js' : 'pano.min.js',
+      publicPath: `/${buildPath}/`,
     },
-    plugins: plugins,
+    plugins: [
+      new webpack.BannerPlugin({
+        banner: `pano.js v${pkg.version} | (c) Sinan Bolel & Prescott Prue`,
+        entryOnly: true,
+        raw: false,
+      }),
+    ],
     resolve: {
-      alias: { assets: path.resolve(__dirname, '..', 'assets') },
+      alias: {
+        assets: path.resolve(__dirname, '..', publicPath),
+      },
       extensions: ['.js'],
     },
-    target: options.target,
     optimization: {
       minimize: !options.dev,
       minimizer: [
@@ -68,6 +96,21 @@ const createWebpackConfig = (options = {}) => {
           },
         }),
       ],
+      splitChunks: {
+        cacheGroups: {
+          defaultVendors: {
+            name: 'vendor',
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            chunks: 'all',
+          },
+          default: {
+            test: /[\\/]src[\\/]/,
+            name: 'pano',
+            priority: -20,
+          },
+        },
+      },
     },
   }
 }

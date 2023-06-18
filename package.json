@@ -7,6 +7,7 @@
   "scripts": {
     "clean": "rimraf dist lib coverage",
     "lint": "standard ./src/**/*.js",
+    "fix": "npm run lint -- --fix",
     "copy": "node ./bin/copy",
     "test": "mocha -R spec --compilers js:babel-core/register ./test/setup.js ./test/**/*.spec.js",
     "test:cov": "babel-node $(npm bin)/isparta cover --report lcov ./node_modules/mocha/bin/_mocha -- ./test --recursive",

@@ -28,13 +28,18 @@ You can either install via npm and include the scripts in your build process, o
     npm install --save panolens.js pano
     ```
 
+  Import Pano
+
+    ```js
+    import Pano from 'pano'
+    ```
+
 * **Using the CDN**
 
   Include scripts via CDN by adding them to your `index.html`:
 
   ```html
-  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/panolens-1.0.1-beta.min.js"></script>
-  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/pano-2.0.0.min.js"></script>
+  <script type="text/javascript" src="//sinanbolel.firebaseapp.com/cdn/pano-3.0.0.min.js"></script>
   ```
 
 ## Usage
