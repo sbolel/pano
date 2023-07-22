@@ -1321,7 +1321,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.22.6":
+  version: 7.22.6
+  resolution: "@babel/runtime@npm:7.22.6"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: e585338287c4514a713babf4fdb8fc2a67adcebab3e7723a739fc62c79cfda875b314c90fd25f827afb150d781af97bc16c85bfdbfa2889f06053879a1ddb597
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.8.4":
   version: 7.22.5
   resolution: "@babel/runtime@npm:7.22.5"
   dependencies:
@@ -5484,7 +5493,7 @@ __metadata:
     "@babel/core": ^7.22.5
     "@babel/plugin-transform-runtime": ^7.22.5
     "@babel/preset-env": ^7.22.5
-    "@babel/runtime": ^7.22.5
+    "@babel/runtime": ^7.22.6
     babel-loader: ^9.1.2
     chai: ^4.3.7
     fs-extra: ^11.1.1
