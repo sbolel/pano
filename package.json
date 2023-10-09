@@ -62,7 +62,7 @@
   ],
   "dependencies": {
     "panolens": "^0.12.1",
-    "three": "^0.155.0"
+    "three": "^0.157.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",

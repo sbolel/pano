@@ -5872,7 +5872,7 @@ __metadata:
     rimraf: ^5.0.5
     standard: ^17.1.0
     terser-webpack-plugin: ^5.3.9
-    three: ^0.155.0
+    three: ^0.157.0
     webpack: ^5.88.2
     webpack-cli: ^5.1.4
   languageName: unknown
@@ -7078,10 +7078,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.155.0":
-  version: 0.155.0
-  resolution: "three@npm:0.155.0"
-  checksum: 55de8af716686be2159b2ff407501ce2e6418b7d16a8dc57f3dcf9f08c4a6bedf0623fa8ddb67c1ae6f679d7ca53cfa0c64bab6b0577d6c467618389d5561211
+"three@npm:^0.157.0":
+  version: 0.157.0
+  resolution: "three@npm:0.157.0"
+  checksum: 444797461c9db09d8a4cad886e494c2e6dd5754f09ac7ac4af75a3bf1143ae79641388db31999edcc76c5dba9677639f09da2df8d0128396a1dd59e41226c85c
   languageName: node
   linkType: hard
 
